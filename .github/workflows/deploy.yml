@@ -20,11 +20,14 @@ jobs:
         npm install
         npm run build
     
-    - name: Deploy
-      uses: s0/git-publish-subdir-action@develop
+    - name: Pushing to production repo
+      uses: cpina/github-action-push-to-another-repository@main
       env:
-        REPO: git@github.com:LaloBenitez/lalobenitez-portfolio-production.git
-        BRANCH: production
-        FOLDER: build
-        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+        API_TOKEN_GITHUB: ${{ secrets.DEPLOYMENT_TOKEN }}
+      with:
+        source-directory: 'build'
+        destination-github-username: 'LaloBenitez'
+        destination-repository-name: 'lalobenitez-portfolio-production'
+        user-email: eduardombc96@gmail.com
+        target-branch: main
         

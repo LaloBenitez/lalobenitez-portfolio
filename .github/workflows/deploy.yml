@@ -23,8 +23,8 @@ jobs:
     - name: Deploy
       uses: s0/git-publish-subdir-action@develop
       env:
-        REPO: https://github.com/LaloBenitez/lalobenitez-portfolio-production.git
+        REPO: git@github.com:LaloBenitez/lalobenitez-portfolio-production.git
         BRANCH: production
         FOLDER: build
-        GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_TOKEN }}
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
         

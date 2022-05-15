@@ -29,5 +29,6 @@ jobs:
         destination-github-username: 'LaloBenitez'
         destination-repository-name: 'lalobenitez-portfolio-production'
         user-email: eduardombc96@gmail.com
+        commit-message: See ORIGIN_COMMIT from $GITHUB_REF
         target-branch: main
         
